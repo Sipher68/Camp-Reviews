@@ -1,22 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Campground</title>
-  </head>
-  <body>
+<% layout('layouts/boilerplate') %>
+<div class="row">
+  <h1 class="text-center">New Campground</h1>
+  <div class="col-6 offset-3">
     <form action="/campgrounds" method="post">
-      <div>
+      <div class="form-group mb-3">
         <label for="title">Title</label>
-        <input type="text" id="title" name="campground[title]" />
+        <input
+          type="text"
+          id="title"
+          name="campground[title]"
+          class="form-control"
+        />
       </div>
-      <div>
+      <div class="form-group mb-3">
         <label for="location">Location</label>
-        <input type="text" id="location" name="campground[location]" />
+        <input
+          type="text"
+          id="location"
+          name="campground[location]"
+          class="form-control"
+        />
       </div>
-      <button>Add Campground</button>
+      <div class="mb-2">
+        <label for="price">Campground Price</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="price-label">₱</div>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            id="price"
+            placeholder="0.00"
+            aria-describedby="price-label"
+            name="campground[price]"
+          />
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="image">Image URL</label>
+        <input
+          type="text"
+          id="image"
+          name="campground[image]"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="description">Description</label>
+        <textarea
+          type="text"
+          id="description"
+          name="campground[description]"
+          class="form-control"
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-primary">Add Campground</button>
+      </div>
     </form>
     <a href="/campgrounds">All Campgrounds</a>
-  </body>
-</html>
+  </div>
+</div>
